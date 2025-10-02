@@ -1,0 +1,21 @@
+name: Custom GitHub Action with Email
+
+on:
+  push:
+    branches:
+      - main  # This will run when you push to the 'main' branch
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 24f2000612@ds.study.iitm.ac.in
+        run: echo "Hello, world!"  # This will print 'Hello, world!' in the logs
+
+      - name: Print Current Time
+        run: echo "Current time is $(date)"  # Prints the current time in the logs
