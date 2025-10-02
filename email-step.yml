@@ -1,21 +1,21 @@
-name: Custom GitHub Action with Email
+name: Trigger Action with Email in Step
 
 on:
-  push:
-    branches:
-      - main  # This will run when you push to the 'main' branch
   workflow_dispatch: # Allows manual triggering
 
 jobs:
-  test:
+  example-job:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: 24f2000612@ds.study.iitm.ac.in
-        run: echo "Hello, world!"  # This will print 'Hello, world!' in the logs
-
-      - name: Print Current Time
-        run: echo "Current time is $(date)"  # Prints the current time in the logs
+      - name: 24f2000612@ds.study.iitm.ac.in # Step with your email
+        run: |
+          echo "Hello, this is a test step with the email address"
+          echo "Email address is: 24f2000612@ds.study.iitm.ac.in"
+        
+      - name: Print Success Message
+        run: |
+          echo "Action triggered successfully!"
